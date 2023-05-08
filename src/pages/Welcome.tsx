@@ -114,7 +114,7 @@ const Welcome: React.FC = () => {
               color: token.colorTextHeading,
             }}
           >
-            欢迎使用 Ant Design Pro
+            欢迎访问学峰报考官网
           </div>
           <p
             style={{
@@ -126,8 +126,7 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            Ant Design Pro 是一个整合了 umi，Ant Design 和 ProComponents
-            的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
+            高考家长的一站式服务平台，涵盖了智能填报、等位分查询、专业查询、院校查询等功能
           </p>
           <div
             style={{
@@ -139,20 +138,20 @@ const Welcome: React.FC = () => {
             <InfoCard
               index={1}
               href="https://umijs.org/docs/introduce/introduce"
-              title="了解 umi"
-              desc="umi 是一个可扩展的企业级前端应用框架,umi 以路由为基础的，同时支持配置式路由和约定式路由，保证路由的功能完备，并以此进行功能扩展。"
+              title="智能填报"
+              desc="涵盖了智能填报、等位分查询、专业查询、院校查询等功能"
             />
             <InfoCard
               index={2}
-              title="了解 ant design"
+              title="生涯规划"
               href="https://ant.design"
-              desc="antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
+              desc="生涯规划是指个人在一生中，通过对自身的认识、对社会的认识、对职业的认识、对职业生涯的认识，确定自己的职业目标，并为实现职业目标而采取的行动。"
             />
             <InfoCard
               index={3}
-              title="了解 Pro Components"
+              title="成为会员"
               href="https://procomponents.ant.design"
-              desc="ProComponents 是一个基于 Ant Design 做了更高抽象的模板组件，以 一个组件就是一个页面为开发理念，为中后台开发带来更好的体验。"
+              desc="欢迎成为我们的会员，享受更多高级服务"
             />
           </div>
         </div>

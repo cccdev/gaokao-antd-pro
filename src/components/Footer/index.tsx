@@ -1,4 +1,4 @@
-import { GithubOutlined } from '@ant-design/icons';
+import { GithubOutlined, WechatOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-components';
 import { useIntl } from '@umijs/max';
 import React from 'react';
@@ -20,21 +20,15 @@ const Footer: React.FC = () => {
       copyright={`${currentYear} ${defaultMessage}`}
       links={[
         {
-          key: 'Ant Design Pro',
-          title: 'Ant Design Pro',
-          href: 'https://pro.ant.design',
+          key: 'weixin',
+          title: <WechatOutlined />,
+          href: 'https://xuefeng-1gc618ip42799984-1317554492.tcloudbaseapp.com',
           blankTarget: true,
         },
         {
-          key: 'github',
-          title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
-          blankTarget: true,
-        },
-        {
-          key: 'Ant Design',
-          title: 'Ant Design',
-          href: 'https://ant.design',
+          key: 'weixin-txt',
+          title: '添加陆老师微信',
+          href: 'https://xuefeng-1gc618ip42799984-1317554492.tcloudbaseapp.com',
           blankTarget: true,
         },
       ]}
