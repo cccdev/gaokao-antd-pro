@@ -1,15 +1,12 @@
 // @ts-ignore
 /* eslint-disable */
-import { request } from 'umi';
-
-// 后台 API，这里使用 antd 官方提供的示例服务
-const API_ENDPOINT = 'https://proapi.azurewebsites.net'
+import { request } from '@umijs/max';
 
 /** 获取当前的用户 GET /api/currentUser */
 export async function currentUser(options?: { [key: string]: any }) {
   return request<{
     data: API.CurrentUser;
-  }>(`${API_ENDPOINT}/api/currentUser`, {
+  }>('/api/currentUser', {
     method: 'GET',
     ...(options || {}),
   });
@@ -17,7 +14,7 @@ export async function currentUser(options?: { [key: string]: any }) {
 
 /** 退出登录接口 POST /api/login/outLogin */
 export async function outLogin(options?: { [key: string]: any }) {
-  return request<Record<string, any>>(`${API_ENDPOINT}/api/login/outLogin`, {
+  return request<Record<string, any>>('/api/login/outLogin', {
     method: 'POST',
     ...(options || {}),
   });
@@ -25,7 +22,7 @@ export async function outLogin(options?: { [key: string]: any }) {
 
 /** 登录接口 POST /api/login/account */
 export async function login(body: API.LoginParams, options?: { [key: string]: any }) {
-  return request<API.LoginResult>(`${API_ENDPOINT}/api/login/account`, {
+  return request<API.LoginResult>('/api/login/account', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -37,7 +34,7 @@ export async function login(body: API.LoginParams, options?: { [key: string]: an
 
 /** 此处后端没有提供注释 GET /api/notices */
 export async function getNotices(options?: { [key: string]: any }) {
-  return request<API.NoticeIconList>(`${API_ENDPOINT}/api/notices`, {
+  return request<API.NoticeIconList>('/api/notices', {
     method: 'GET',
     ...(options || {}),
   });
@@ -54,7 +51,7 @@ export async function rule(
   },
   options?: { [key: string]: any },
 ) {
-  return request<API.RuleList>(`${API_ENDPOINT}/api/rule`, {
+  return request<API.RuleList>('/api/rule', {
     method: 'GET',
     params: {
       ...params,
@@ -65,7 +62,7 @@ export async function rule(
 
 /** 新建规则 PUT /api/rule */
 export async function updateRule(options?: { [key: string]: any }) {
-  return request<API.RuleListItem>(`${API_ENDPOINT}/api/rule`, {
+  return request<API.RuleListItem>('/api/rule', {
     method: 'PUT',
     ...(options || {}),
   });
@@ -73,7 +70,7 @@ export async function updateRule(options?: { [key: string]: any }) {
 
 /** 新建规则 POST /api/rule */
 export async function addRule(options?: { [key: string]: any }) {
-  return request<API.RuleListItem>(`${API_ENDPOINT}/api/rule`, {
+  return request<API.RuleListItem>('/api/rule', {
     method: 'POST',
     ...(options || {}),
   });
@@ -81,8 +78,16 @@ export async function addRule(options?: { [key: string]: any }) {
 
 /** 删除规则 DELETE /api/rule */
 export async function removeRule(options?: { [key: string]: any }) {
-  return request<Record<string, any>>(`${API_ENDPOINT}/api/rule`, {
+  return request<Record<string, any>>('/api/rule', {
     method: 'DELETE',
+    ...(options || {}),
+  });
+}
+
+/** 获取安徽高考一分一段 */
+export async function getRankScore(options?: { [key: string]: any }) {
+  return request<API.NoticeIconList>('/api/rankScore', {
+    method: 'GET',
     ...(options || {}),
   });
 }
