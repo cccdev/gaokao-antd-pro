@@ -3,7 +3,8 @@
  * @description 高考位次一分一段查询
  */
 import React, { useEffect, useState } from 'react';
-import { Button, Checkbox, Form, Input, InputNumber, Modal, Select } from 'antd';
+import { Button, Card, Form, InputNumber, Modal, Select } from 'antd';
+import { PageContainer } from '@ant-design/pro-components';
 
 import { AudioOutlined } from '@ant-design/icons';
 // import { rankScoreLi, ranksWen } from '../mock/data';
@@ -1001,66 +1002,75 @@ const RankQuery: React.FC<RankQueryProps> = (props) => {
 
   const [form] = Form.useForm();
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Form
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        className=" max-w-xl"
-        form={form}
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
+    <PageContainer>
+      <Card
+        className="shadow-xl w-1/2 rounded-xl"
+        bodyStyle={{
+          backgroundImage: 'background-image: linear-gradient(75deg, #FBFDFF 0%, #F5F7FF 100%)',
+        }}
       >
-        <Form.Item
-          label="文/理科"
-          name="subject"
-          rules={[{ required: true, message: '请选择文理科！' }]}
-        >
-          <Select>
-            <Option value="理科">理科</Option>
-            <Option value="文科">文科</Option>
-          </Select>
-        </Form.Item>
+        <div className="flex flex-col justify-center items-center">
+          <Form
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            className=" max-w-xl"
+            form={form}
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
+          >
+            <Form.Item
+              label="文/理科"
+              name="subject"
+              rules={[{ required: true, message: '请选择文理科！' }]}
+            >
+              <Select>
+                <Option value="理科">理科</Option>
+                <Option value="文科">文科</Option>
+              </Select>
+            </Form.Item>
 
-        <Form.Item
-          label="高考位次"
-          name="rank"
-          rules={[
-            {
-              type: 'number',
-              min: 1,
-              message: '高考位次必须大于0！',
-            },
-          ]}
-        >
-          <InputNumber
-            className="w-auto"
-            placeholder="请输入高考位次"
-            value={rank}
-            onChange={(e: any) => setRank(e)}
-          />
-        </Form.Item>
+            <Form.Item
+              label="高考位次"
+              name="rank"
+              rules={[
+                {
+                  type: 'number',
+                  min: 1,
+                  message: '高考位次必须大于0！',
+                },
+              ]}
+            >
+              <InputNumber
+                className="w-auto"
+                placeholder="请输入高考位次"
+                value={rank}
+                onChange={(e: any) => setRank(e)}
+              />
+            </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type="primary" htmlType="submit">
-            查询
-          </Button>
-        </Form.Item>
-      </Form>
-      <Modal
-        title="查询结果"
-        open={isModalOpen}
-        onOk={() => setIsModalOpen(false)}
-        onCancel={() => setIsModalOpen(false)}
-      >
-        <p>
-          您的位次是:{rank}，等位分是{sameScore}
-        </p>
-      </Modal>
-      <br />
-    </div>
+            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+              <Button type="primary" htmlType="submit">
+                查询
+              </Button>
+            </Form.Item>
+          </Form>
+          <Modal
+            title="查询结果"
+            open={isModalOpen}
+            onOk={() => setIsModalOpen(false)}
+            onCancel={() => setIsModalOpen(false)}
+          >
+            <p>
+              您的位次是:{rank}，等位分是{sameScore}
+            </p>
+          </Modal>
+          <br />
+        </div>
+      </Card>
+    </PageContainer>
   );
 };
 
