@@ -2,6 +2,8 @@
 
 This project is initialized with [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
 
+[![](https://cloudbase.net/deploy.svg)](https://console.cloud.tencent.com/webify/new?tpl=https%3A%2F%2Fgithub.com%2Fcccdev%2Fgaokao-antd-pro)
+
 ## Environment Prepare
 
 Install `node_modules`:
