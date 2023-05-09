@@ -46,6 +46,7 @@ const ActionIcons = () => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Lang = () => {
   const langClassName = useEmotionCss(({ token }) => {
     return {
